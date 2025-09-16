@@ -1,0 +1,82 @@
+- Start the server:
+    node app.js
+
+- Default server URL:
+    http://localhost:3000
+
+----------------------------------------
+
+1. Project Structure
+--------------------
+task-manager-api-Amoghk3/
+│
+├── app.js       
+├── README.md    
+└── NOTES.txt    
+
+----------------------------------------
+
+2. Dependencies
+---------------
+- express (for building REST API)
+
+----------------------------------------
+
+3. Validation Rules
+-------------------
+- Title: Must be a non-empty string
+- Description: Must be a non-empty string
+- Completed: Must be a boolean (true/false)
+- Priority: Must be one of "low", "medium", "high"
+
+If validation fails, the API responds with:
+{
+  "errors": [ "Error message here..." ]
+}
+
+----------------------------------------
+
+4. Error Handling
+-----------------
+- 400 Bad Request: Invalid input
+- 404 Not Found: Task not found
+- 500 Internal Server Error: Unhandled server error
+
+A global error handler ensures any unhandled error returns:
+{
+  "error": "Something went wrong!"
+}
+
+----------------------------------------
+
+5. Testing the API
+------------------
+You can test endpoints using:
+- Postman
+- cURL
+- REST Client in VSCode
+
+Example cURL commands:
+
+- Get all tasks:
+    curl http://localhost:3000/api/tasks
+
+- Get task by ID:
+    curl http://localhost:3000/api/tasks/1
+
+- Create a task:
+    curl -X POST http://localhost:3000/api/tasks \
+    -H "Content-Type: application/json" \
+    -d '{"title":"New Task","description":"Test","completed":false,"priority":"low"}'
+
+- Update a task:
+    curl -X PUT http://localhost:3000/api/tasks/1 \
+    -H "Content-Type: application/json" \
+    -d '{"completed":true}'
+
+- Delete a task:
+    curl -X DELETE http://localhost:3000/api/tasks/1
+
+----------------------------------------
+
+
