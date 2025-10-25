@@ -1,5 +1,5 @@
 {
-  "name": "course-manager-service",
+  "name": "news-service",
   "version": "1.0.0",
   "description": "Sample NEWS Application Backend Service",
  "scripts": {
